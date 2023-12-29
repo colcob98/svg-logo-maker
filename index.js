@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const { Square, Triangle, Circle } = require("./lib/shapes");
 
 const questions = [
   {
@@ -27,9 +28,39 @@ const questions = [
   },
 ];
 
+function renderLogo(data) {
+  console.log(data);
+  console.log(data.shape);
+  let shape;
+  switch (data.shape) {
+    case "Square":
+      shape = new Square();
+      break;
+    case "Triangle":
+      shape = new Triangle();
+      break;
+    case "Circle":
+      shape = new Circle();
+      break;
+  }
+
+  shape.setColor(data.shapeColor);
+
+  const setSVG = shape.render();
+
+  fs.writeFile("logo.svg", setSVG, (error) => {
+    if (error) {
+      console.log("Could not generate svg file.");
+    } else {
+      console.log("Logo successfully generated as 'logo.svg'.");
+    }
+  });
+}
+
 function initPrompting() {
   inquirer.prompt(questions).then((response) => {
     console.log(response);
+    renderLogo(response);
   });
 }
 
