@@ -29,8 +29,8 @@ const questions = [
 ];
 
 function renderLogo(data) {
-  console.log(data);
-  console.log(data.shape);
+  //console.log(data);
+  //console.log(data.shape);
   let shape;
   switch (data.shape) {
     case "Square":
@@ -70,7 +70,7 @@ function renderLogo(data) {
 
 function initPrompting() {
   inquirer.prompt(questions).then((response) => {
-    console.log(response);
+    //console.log(response);
     renderLogo(response);
   });
 }
