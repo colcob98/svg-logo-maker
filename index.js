@@ -46,7 +46,18 @@ function renderLogo(data) {
 
   shape.setColor(data.shapeColor);
 
-  const setSVG = shape.render();
+  const setSVG = `<?xml version="1.0" standalone="no"?>
+  <svg width="200" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+ ${shape.render()}
+ 
+ <text x="115" y="115" text-anchor="middle" dominant-baseline="middle" font-size="45" font-weight="bold" fill="${
+   data.textColor
+ }">
+ <tspan>${data.logoText}</tspan>
+</text>
+</svg>
+ `;
 
   fs.writeFile("logo.svg", setSVG, (error) => {
     if (error) {
