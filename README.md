@@ -6,9 +6,7 @@ A node.js app executed from the command line that makes a shape with three lette
 
 Run 'npm run start' to begin the app.
 
-A demo can be seen below:
-
-![walkthrough video](https://drive.google.com/file/d/1koHvhFrjQ2ZnMm3t44whBPs7OUDmFc5m/view)
+A demo can be viewed [here](https://drive.google.com/file/d/1koHvhFrjQ2ZnMm3t44whBPs7OUDmFc5m/view).
 
 ## Testing
 
